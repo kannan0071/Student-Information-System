@@ -61,18 +61,16 @@ public class MainModule {
             System.out.println("2. Update Student Info");
             System.out.println("3. Delete Student");
             System.out.println("4. Enroll Student in Course");
-            System.out.println("5. Add New Course");
-            System.out.println("6. Add New Teacher");
-            System.out.println("7. Assign Course to Teacher");
-            System.out.println("8. Record Student Payment");
-            System.out.println("9. Display Student Details");
-            System.out.println("10. Display Teacher Details");
-            System.out.println("11. Display Course Details");
-            System.out.println("12. Get Enrollments by Student");
-            System.out.println("13. Get Payments by Student");
-            System.out.println("14. Get Enrollments by Course Name");
-            System.out.println("15. Generate Enrollment Report for Course");
-            System.out.println("16. Exit");
+            System.out.println("5. Assign Course to Teacher");
+            System.out.println("6. Record Student Payment");
+            System.out.println("7. Display Student Details");
+            System.out.println("8. Display Teacher Details");
+            System.out.println("9. Display Course Details");
+            System.out.println("10. Get Enrollments by Student");
+            System.out.println("11. Get Payments by Student");
+            System.out.println("12. Get Enrollments by Course Name");
+            System.out.println("13. Generate Enrollment Report for Course");
+            System.out.println("14. Exit");
             System.out.print("Enter your choice: ");
 
             int choice = sc.nextInt();
@@ -164,54 +162,8 @@ public class MainModule {
                         System.err.println("Error: " + e.getMessage());
                     }
                 }
-                
+
                 case 5 -> {
-                    try {
-                        sc.nextLine();
-                        System.out.print("Course Name: ");
-                        String code = sc.nextLine();
-                        System.out.print("Course Code: ");
-                        String name = sc.nextLine();
-                        System.out.print("Teacher ID: ");
-                        int id = sc.nextInt();
-                        System.out.print("Instructor Name: ");
-                        String i_name = sc.nextLine();
-
-                        Course course = new Course(name, code, id, i_name);
-                        if (courseService.addCourse(course)) {
-                            System.out.println("Course added successfully.");
-                        } else {
-                            System.out.println("Failed to add course.");
-                        }
-                    } catch (InvalidCourseDataException e) {
-                        System.err.println("Error: " + e.getMessage());
-                    }
-                }
-                
-                case 6 -> {
-                    try {
-                        sc.nextLine();
-                        System.out.print("First Name: ");
-                        String firstName = sc.nextLine();
-                        System.out.print("Last Name: ");
-                        String lastName = sc.nextLine();
-                        System.out.print("Email: ");
-                        String email = sc.nextLine();
-                        System.out.print("Expertise: ");
-                        String expertise = sc.nextLine();
-
-                        Teacher teacher = new Teacher(firstName, lastName, email, expertise);
-                        if (teacherService.addTeacher(teacher)) {
-                            System.out.println("Teacher added successfully.");
-                        } else {
-                            System.out.println("Failed to add teacher.");
-                        }
-                    } catch (InvalidTeacherDataException e) {
-                        System.err.println("Error: " + e.getMessage());
-                    }
-                }
-
-                case 7 -> {
                     try {
                         System.out.print("Enter Teacher ID: ");
                         int tid = sc.nextInt();
@@ -229,7 +181,7 @@ public class MainModule {
                     }
                 }
 
-                case 8 -> {
+                case 6 -> {
                     try {
                         System.out.print("Enter Student ID: ");
                         int sid = sc.nextInt();
@@ -250,7 +202,7 @@ public class MainModule {
                     }
                 }
 
-                case 9 -> {
+                case 7 -> {
                     try {
                         System.out.print("Enter Student ID: ");
                         int sid = sc.nextInt();
@@ -261,7 +213,7 @@ public class MainModule {
                     }
                 }
 
-                case 10 -> {
+                case 8 -> {
                     try {
                         System.out.print("Enter Teacher ID: ");
                         int tid = sc.nextInt();
@@ -272,7 +224,7 @@ public class MainModule {
                     }
                 }
 
-                case 11 -> {
+                case 9 -> {
                 	try {
                         sc.nextLine();
                         System.out.print("Enter Course code: ");
@@ -284,7 +236,7 @@ public class MainModule {
                     }
                 }
 
-                case 12 -> {
+                case 10 -> {
                     try {
                         System.out.print("Enter Student ID: ");
                         int sid = sc.nextInt();
@@ -298,7 +250,7 @@ public class MainModule {
                     }
                 }
 
-                case 13 -> {
+                case 11 -> {
                     try {
                         System.out.print("Enter Student ID: ");
                         int sid = sc.nextInt();
@@ -312,7 +264,7 @@ public class MainModule {
                     }
                 }
 
-                case 14 -> {
+                case 12 -> {
                     sc.nextLine();
                     System.out.print("Enter Course Name: ");
                     String courseName = sc.nextLine();
@@ -322,7 +274,7 @@ public class MainModule {
                     }
                 }
                 
-                case 15 -> {
+                case 13 -> {
                 	System.out.print("Enter Course Name for Enrollment Report: ");
                 	sc.nextLine();
                     String courseNameForReport = sc.nextLine();
@@ -354,7 +306,7 @@ public class MainModule {
                         System.err.println("Course not found: " + ex.getMessage());
                     }
                 }
-                case 16 -> {
+                case 14 -> {
                     System.out.println("Exiting from Student Information System...");
                     sc.close();
                     System.exit(0);
