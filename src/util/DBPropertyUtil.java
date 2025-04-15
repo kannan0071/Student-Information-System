@@ -7,7 +7,6 @@ import java.util.Properties;
 public class DBPropertyUtil {
 	
 	public static String getConnectionString(String fileName) throws IOException {
-		
 		String connStr = null;
 		Properties props = new Properties();
 		FileInputStream fis = new FileInputStream(fileName);
