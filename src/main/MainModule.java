@@ -365,37 +365,3 @@ public class MainModule {
         }
 	}
 }
-
-////Enroll Student + Record Payment as One Transaction
-//Student student = new Student(100, "Test", "Student", LocalDate.of(2000, 1, 1), "test@student.com", "9876543210");
-//Course course = new Course(100, "Java Fundamentals", "CS101", 15, "John Doe");
-//try {
-//  studentService.addStudent(student);
-//} catch (Exception e) {
-//  System.out.println("Student may already exist: " + e.getMessage());
-//}
-//
-//try {
-//  courseService.addCourse(course);
-//} catch (Exception e) {
-//  System.out.println("Course may already exist: " + e.getMessage());
-//}
-//System.out.println("------ Testing Transaction: Enroll Student + Record Payment ------");
-//try {
-//  boolean success = studentService.enrollStudentWithPayment(student, course, 5000.0, LocalDate.now());
-//  System.out.println("Transaction status: " + (success ? "Success" : "Failed"));
-//
-//} catch (Exception e) {
-//  System.err.println("Error during enrollment with payment: " + e.getMessage());
-//}
-//
-////Dynamic Query Builder for Student Search
-//System.out.println("\n------ Testing Dynamic Query Builder for Students ------");
-//List<String> columns = List.of("student_id", "first_name", "email"); 
-//String condition = "student_id > 0"; // condition
-//String orderBy = "first_name"; //  order
-//
-//List<Student> students = studentService.queryStudents(columns, condition, orderBy);
-//for (Student s : students) {
-//  System.out.println(s);
-//}
